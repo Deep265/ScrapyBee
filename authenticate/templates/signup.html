@@ -1,0 +1,20 @@
+<html>
+   <head>
+       <title>
+           Signup
+       </title>
+   </head>
+   <body>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          Username  : <input type="text" name="username">
+          Password  : <input type="text" name="password">
+          First Name : <input type="text" name="fname">
+          Last Name : <input type="text" name="lname">
+          Image : <input type="file" name="img">
+          Phone : <input type="text" name="phone">
+          email : <input type="email" name="email">
+          <input TYPE="submit" value="Submit">
+      </form>
+   </body>
+</html>

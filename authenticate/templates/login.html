@@ -1,0 +1,67 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+	<!-- CSS -->
+	<link href="{% static 'assets/css/index.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/add_item.css' %}" rel="stylesheet">
+
+	  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<title> ScrapyBee </title>
+</head>
+<body class="body-bg" style="font-family: 'Roboto', sans-serif;">
+
+
+
+
+<!-- Start of body -->
+<!-- Add Item -->
+  <div class="registration-form social-media">
+     <section>
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+            <div class="text-center pb-4">
+                <span><h2>Login</h2></span>
+            </div>
+			<hr class="hr-primary mb-3" />
+            <div class="form-group pt-4">
+                <input type="text" class="form-control item" placeholder="Username" name="username" required>
+            </div>
+
+            <div class="form-group pt-4">
+                <input type="password" class="form-control item" placeholder="Password" name="password" required>
+            </div>
+
+
+			<div class="form-group mb-5 text-center">
+                <button type="submit" class="btn btn-block create-account">Login</button>
+            </div>
+        </form>
+
+     </section>
+    </div>
+  <!-- End of Add item -->
+<!-- End of body -->
+
+
+
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>

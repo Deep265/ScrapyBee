@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+  function createNewElement() {
+      var testname = document.getElementById("testnameID").value;
+      var numquestions = document.getElementById("numID").value;
+      var numofquestions = parseInt(numquestions)
+
+      var questionAnswerHTML = "";
+      for (var i = 0; i < numofquestions; i++) {
+         questionAnswerHTML += `
+            <label for="question${i}">
+               Question: ${i+1}
+            </label>
+            <br />
+            <input type="text"
+                   id="question${i}"
+                   class="col${i}"
+                   name="col${i}"
+                   placeholder="Type Question ${i+1} Here." />
+
+           <br /><br />
+           <label for="answer${i}">
+               Answer: ${i+1}
+           </label>
+           <br />
+           <input type="text"
+                  id="answer${i}"
+                  name="xpath${i}"
+                  placeholder="Type Answer ${i+1} Here." />
+           <br /><br />
+       `;
+      }
+   document.getElementById("question-paper").innerHTML = questionAnswerHTML;
+}
+</script>
+<body>
+  <form method="POST">
+      {% csrf_token %}
+   <h3>Enter the name of the test you want to make:</h3>
+    <input type="text" name="testname" id="testnameID">
+
+    <h3>Enter the number of questions you want the test to have:</h3>
+    <input type="text" name="numofquestions" id="numID"> <button type="button" onclick="createNewElement()">Let's make it!</button>
+
+    <hr>
+    <div id="question-paper"> </div>
+      <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
